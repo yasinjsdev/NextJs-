@@ -1,0 +1,25 @@
+.container {
+  background-color: #edf7fa;
+}
+
+.content {
+  max-width: 1152px;
+  margin: auto;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recent {
+  font-weight: 400;
+  font-size: 1.375rem;
+  line-height: 60px;
+  color: #21243d;
+}
+
+.view {
+  color: #00a8cc;
+}
