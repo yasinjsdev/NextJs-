@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "name": "Yasin Memon",
-    "email": "memonyasin121@gmail.com",
+    "email": "memonyasin1212@gmail.com",
     "password": "1234"
 }
 
@@ -13,7 +13,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "email": "memonyasin120@gmail.com",
+    "email": "memonyasin1212@gmail.com",
     "password": "1234"
 }
 
@@ -29,18 +29,18 @@ POST http://localhost:3000/api/blog/create
 Content-type: "application/json"
 
 {
-    "title" : "Mekanism",
+    "title" : "1234",
     "description" : "Learn Next.js"
 }
 
 ### edit blog
-PATCH  http://localhost:3000/api/blog/edit/6a156a42f5fbb98fca398dfb
+PATCH  http://localhost:3000/api/blog/edit/6a157e2120dab3500a3c6767
 Content-Type: application/json
 
 {
-    "title" : "MEKA",
+    "title" : "Appsile",
     "description" : "edited blog"
 }
 
 ### delete blog
-DELETE http://localhost:3000/api/blog/delete/6a156a42f5fbb98fca398dfb
+DELETE http://localhost:3000/api/blog/delete/6a157e2120dab3500a3c6767

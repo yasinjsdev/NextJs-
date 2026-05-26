@@ -12,5 +12,7 @@ export async function ConnectDb() {
       return;
     }
     await mongoose.connect(mongo_uri);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
