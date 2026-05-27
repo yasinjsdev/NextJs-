@@ -6,6 +6,7 @@ export async function GET(request: NextRequest) {
   try {
     await ConnectDb();
     const blogs = await blog.find({});
+    console.log("bloggggg", blogs);
 
     if (blogs.length === 0) {
       return NextResponse.json({
@@ -14,7 +15,7 @@ export async function GET(request: NextRequest) {
         data: blogs,
       });
     }
-    
+
     return NextResponse.json(
       {
         success: true,

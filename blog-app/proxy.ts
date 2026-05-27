@@ -26,8 +26,9 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     "/login",
+    "/profile",
     "/register",
-    "/api/blog/create",
+    // "/api/blog/create",
     "/api/blog/edit/:path*",
     "/api/blog/delete",
   ],

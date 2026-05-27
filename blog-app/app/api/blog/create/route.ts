@@ -9,26 +9,32 @@ export async function POST(req: NextRequest) {
     const token = req.cookies.get("token")?.value;
 
     if (!token) {
-      return NextResponse.json({
-        success: false,
-        message: "unauthorized",
-      });
+      return NextResponse.json(
+        {
+          success: false,
+          message: "unauthorized",
+        },
+        {
+          status: 401,
+        },
+      );
     }
 
     const decoded = verifyToken(token);
 
-    const { title, description } = await req.json();
+    const { title, description, content } = await req.json();
 
-    if (!title || !description) {
+    if (!title || !description || !content) {
       return NextResponse.json({
         success: false,
-        message: "Tittle and Description required",
+        message: "Tittle, Description and content required",
       });
     }
 
     const newBlog = {
       title,
       description,
+      content,
       author: decoded.userId,
     };
 
@@ -36,6 +42,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       message: "blog created successfull",
+      data: blog,
     });
   } catch (error) {
     console.log(error);

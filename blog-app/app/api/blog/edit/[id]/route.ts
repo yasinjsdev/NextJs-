@@ -24,11 +24,12 @@ export async function PATCH(
 
     const decoded = verifyToken(token);
 
-    const { title, description } = await req.json();
+    const { title, description, content } = await req.json();
     const { id } = await params;
     const updatedBlog = {
       title,
       description,
+      content,
     };
 
     const blog = await Blog.findByIdAndUpdate(id, updatedBlog, {
